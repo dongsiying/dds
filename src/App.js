@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Icon, Button } from 'antd';
+import { Icon, Button, Select } from 'antd';
+
+const Option = Select.Option;
 
 const PandaSvg = () => (
   <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
@@ -23,17 +25,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.handleChange  = this.handleChange.bind(this);
   }
   onClick = (e) => {
     console.log('into onClick', e.target.value);
   };
 
-
+  handleChange(value) {
+    console.log(`selected ${value}`);
+  }
   render() {
     return (
       <div className="App">
         <PandaIcon style={{ fontSize: '32px' }} />
         <Button onClick={this.onClick}></Button>
+        <Select defaultValue="lucy" style={{ width: 120 }} onChange={this.handleChange}>
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
+          <Option value="disabled" disabled>Disabled</Option>
+          <Option value="Yiminghe">yiminghe</Option>
+        </Select>
+
       </div>
     );
   }
