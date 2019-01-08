@@ -25,12 +25,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.handleChange  = this.handleChange.bind(this);
   }
   onClick = (e) => {
     console.log('into onClick', e.target.value);
   };
 
-
+  handleChange(value) {
+    console.log(`selected ${value}`);
+  }
   render() {
     return (
       <div className="App">
