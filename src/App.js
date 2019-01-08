@@ -1,9 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Icon, Button, Select } from 'antd';
+import { Icon, Button, Select, Menu, Dropdown } from 'antd';
 
 const Option = Select.Option;
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
 
 const PandaSvg = () => (
   <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
@@ -45,7 +58,11 @@ class App extends React.Component {
           <Option value="disabled" disabled>Disabled</Option>
           <Option value="Yiminghe">yiminghe</Option>
         </Select>
-
+        <Dropdown overlay={menu}>
+          <a className="ant-dropdown-link" href="#">
+            Hover me <Icon type="down" />
+          </a>
+        </Dropdown>
       </div>
     );
   }
