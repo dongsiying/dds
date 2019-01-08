@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Icon} from 'antd';
+import { Icon, Button } from 'antd';
 
 const PandaSvg = () => (
   <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
@@ -22,14 +22,18 @@ const PandaIcon = props => (
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.onClick = this.onClick.bind(this);
   }
-  
+  onClick = (e) => {
+    console.log('into onClick', e.target.value);
+  };
 
 
   render() {
     return (
       <div className="App">
-                <PandaIcon style={{ fontSize: '32px' }} />
+        <PandaIcon style={{ fontSize: '32px' }} />
+        <Button onClick={this.onClick}></Button>
       </div>
     );
   }
