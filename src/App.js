@@ -39,7 +39,7 @@ class App extends React.Component {
       <div className="App">
         <PandaIcon style={{ fontSize: '32px' }} />
         <Button onClick={this.onClick}></Button>
-        <Select defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
+        <Select defaultValue="lucy" style={{ width: 120 }} onChange={this.handleChange}>
           <Option value="jack">Jack</Option>
           <Option value="lucy">Lucy</Option>
           <Option value="disabled" disabled>Disabled</Option>
